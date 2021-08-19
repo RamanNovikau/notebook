@@ -1,6 +1,6 @@
 import { INote } from '../types/note-types';
 
-const localStorageName = 'notes';
+const localStorageName = 'rn-app-notes-ls';
 
 export default class NoteService {
   static getNotes() {
