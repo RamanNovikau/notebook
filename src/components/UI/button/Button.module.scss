@@ -1,0 +1,25 @@
+.button {
+  height: 30px;
+  width: 80px;
+  padding: 5px;
+  font-size: 16px;
+  display: flex;
+  column-gap: 5px;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #A67133;
+  color: #FFD29E;
+
+  border: solid 1px #FFE6CA;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover{
+    background-color: #cf8e44;
+  }
+
+  &:active{
+  transform: translateY(1px);
+  }
+}
