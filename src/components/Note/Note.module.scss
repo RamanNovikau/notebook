@@ -1,0 +1,45 @@
+.note {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  padding: 5px;
+  background-color: #ffd29e;
+  border: 2px solid #bfa689;
+  border-radius: 10px;
+  font-size: 20px;
+  color: #a67133;
+  font-weight: bold;
+  transition: all 0.5s;
+
+  &:hover {
+    transform: translateY(-2px);
+    -webkit-box-shadow: 4px 4px 8px 5px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 4px 4px 8px 5px rgba(34, 60, 80, 0.2);
+    box-shadow: 4px 4px 8px 5px rgba(34, 60, 80, 0.2);
+  }
+
+  .text {
+    flex: 1 1 auto;
+    height: 200px;
+    overflow-y: auto;
+    overflow-wrap: break-word;
+
+    .text-tag{
+        background-color: blue;
+    }
+  }
+
+  .tags {
+    display: flex;
+    height: 70px;
+    row-gap: 3px;
+    column-gap: 3px;
+    flex-wrap: wrap;
+    overflow-y: auto;
+  }
+
+  .contols {
+    display: flex;
+  }
+}
