@@ -6,11 +6,11 @@ export default class NoteService {
   static getNotes() {
     try {
       const notes = localStorage.getItem(localStorageName);
-      if (notes === null) return undefined;
+      if (notes === null) return [] as INote[];
       return JSON.parse(notes);
     } catch (e) {
       console.warn(e);
-      return undefined;
+      return [] as INote[];
     }
   }
 
