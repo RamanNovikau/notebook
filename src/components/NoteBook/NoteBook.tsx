@@ -42,15 +42,20 @@ export const NoteBook = () => {
   }, [notes, saveNotes]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(highlightHashTag(e.target.value));
+    setValue(e.target.value);
   };
 
   const addNote = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
     setNotes([
       ...notes,
-      { id: nanoid(), text: value, tags: handleHashTags(value) },
+      {
+        id: nanoid(),
+        text: highlightHashTag(value),
+        tags: handleHashTags(value),
+      },
     ]);
+    setValue('');
   };
 
   const deleteNote = (note: INote) => {
@@ -90,7 +95,11 @@ export const NoteBook = () => {
 
   return (
     <div className={classes.wrapper}>
-      <PostNoteForm changeHandler={handleChange} addHandler={addNote} />
+      <PostNoteForm
+        inputValue={value}
+        changeHandler={handleChange}
+        addHandler={addNote}
+      />
       <FilterNoteForm setFilterTags={setFilterTags} />
       <div className={classes.notebook}>
         {filteredNotes.map((note) => {
